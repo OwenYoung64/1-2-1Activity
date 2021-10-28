@@ -24,6 +24,7 @@ size = 2
 
 #-----initialize turtle-----
 t = trtl.Turtle()
+gamestart = trtl.Turtle()
 t.shape(shape)
 t.turtlesize(size)
 t.fillcolor(color)
@@ -42,11 +43,11 @@ counter.goto(-400, -350)
 
 
 def spot_clicked(x, y):
+    start_game()
     t.goto(rand.randint(xmin, xmax), rand.randint(ymin, ymax))
     scorechange()
     addcolor()
     sizechanger()
-    start_game()
 
 
 def addcolor():
@@ -66,7 +67,9 @@ def scorechange():
     scorewriter.clear()
     scorewriter.write(score, font=fontsetup)
 
-#def start_game():
+def start_game():
+    gamestart.write("Start game by clicking on the dot!")
+
 
 
 
