@@ -66,7 +66,9 @@ def scorechange():
     scorewriter.clear()
     scorewriter.write(score, font=fontsetup)
 
-def start_game():
+#def start_game():
+
+
 
 
 def countdown():
