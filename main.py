@@ -53,7 +53,6 @@ def spot_clicked(x, y):
     addcolor()
     sizechanger()
 
-
 def addcolor():
     colorlist = ["black", "blue", "green", "yellow", "lime", "orange", "purple"]
     t.fillcolor(rand.choice(colorlist))
