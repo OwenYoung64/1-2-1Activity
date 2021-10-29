@@ -72,17 +72,19 @@ def scorechange():
     scorewriter.clear()
     scorewriter.write(score, font=fontsetup)
 
-def start_game():
+def start_game(x, y):
     global timer
-    counter.showturtle()
+
     timer -= 1
-    score
+
+    t.showturtle()
+    countdown()
+
 
 
 def countdown():
     global timer, timerUp
     counter.clear()
-    timer = 31
     if timer <= 30:
         timer -= 1
         counter.write("time's up", font=fontsetup)
@@ -100,5 +102,4 @@ t.onclick(spot_clicked)
 
 wn = trtl.Screen()
 wn.bgcolor("gray")
-wn.ontimer(countdown, counterinterval)
 wn.mainloop()
