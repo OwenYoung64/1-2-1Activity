@@ -24,30 +24,35 @@ size = 2
 
 #-----initialize turtle-----
 t = trtl.Turtle()
-gamestart = trtl.Turtle()
 t.shape(shape)
 t.turtlesize(size)
 t.fillcolor(color)
 t.penup()
+t.hideturtle()
+
+gamestart = trtl.Turtle()
+gamestart.penup()
+gamestart.goto(50, 0)
+gamestart.write("Start game by clicking on the dot!", font=fontsetup)
 
 scorewriter = trtl.Turtle()
 scorewriter.penup()
 scorewriter.goto(400, -350)
+scorewriter.hideturtle()
 
 counter = trtl.Turtle()
 counter.penup()
 counter.goto(-400, -350)
+counter.hideturtle()
 
 #-----game functions--------
 
-
-
 def spot_clicked(x, y):
-    start_game()
     t.goto(rand.randint(xmin, xmax), rand.randint(ymin, ymax))
     scorechange()
     addcolor()
     sizechanger()
+    gamestart.clear()
 
 
 def addcolor():
@@ -68,16 +73,18 @@ def scorechange():
     scorewriter.write(score, font=fontsetup)
 
 def start_game():
-    gamestart.write("Start game by clicking on the dot!")
-
-
-
+    global timer
+    counter.showturtle()
+    timer -= 1
+    score
 
 
 def countdown():
     global timer, timerUp
     counter.clear()
-    if timer <= 0:
+    timer = 31
+    if timer <= 30:
+        timer -= 1
         counter.write("time's up", font=fontsetup)
         timerUp = True
     else:
@@ -87,6 +94,7 @@ def countdown():
 
 
 #-----events----------------
+gamestart.onclick(start_game)
 t.onclick(spot_clicked)
 
 
