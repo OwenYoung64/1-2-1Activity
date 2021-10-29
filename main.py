@@ -20,12 +20,12 @@ counterinterval = 1000
 fontsetup = ("Arial", 20, "normal")
 color = "red"
 shape = "circle"
-size = 2
+#size = 2
 
 #-----initialize turtle-----
 t = trtl.Turtle()
 t.shape(shape)
-t.turtlesize(size)
+#t.turtlesize(size)
 t.fillcolor(color)
 t.penup()
 t.hideturtle()
@@ -33,7 +33,7 @@ t.hideturtle()
 gamestart = trtl.Turtle()
 gamestart.penup()
 gamestart.goto(50, 0)
-gamestart.write("Start game by clicking on the dot!", font=fontsetup)
+gamestart.write("Start", font=fontsetup)
 
 scorewriter = trtl.Turtle()
 scorewriter.penup()
@@ -52,7 +52,6 @@ def spot_clicked(x, y):
     scorechange()
     addcolor()
     sizechanger()
-    gamestart.clear()
 
 
 def addcolor():
@@ -73,19 +72,17 @@ def scorechange():
     scorewriter.write(score, font=fontsetup)
 
 def start_game(x, y):
-    global timer
-
-    timer -= 1
-
     t.showturtle()
     countdown()
+    gamestart.clear
+    
 
 
 
 def countdown():
     global timer, timerUp
     counter.clear()
-    if timer <= 30:
+    if timer <= 0:
         timer -= 1
         counter.write("time's up", font=fontsetup)
         timerUp = True
