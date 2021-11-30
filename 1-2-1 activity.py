@@ -94,8 +94,6 @@ def countdown():
 #-----events----------------
 gamestart.onclick(start_game)
 t.onclick(spot_clicked)
-
-
 wn = trtl.Screen()
 wn.bgcolor("gray")
 wn.mainloop()
